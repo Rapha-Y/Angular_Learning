@@ -5,47 +5,30 @@ import { Component, OnInit } from '@angular/core';
     template: `
         <h2>
             Welcome {{ name }}
-        </h2> 
-        <h2 class='text-success'>
-            Alice
         </h2>
-        <h2 [class]='successClass'>
-            Alice
+        <h2 [style.color]="hasError ? 'red' : 'green'">
+            Style Binding
         </h2>
-        <h2 class='text-special' [class]='successClass'>
-            Alice
+        <h2 [style.color]="highlightColor">
+            Style Binding 2, the much anticipated sequel
         </h2>
-        <h2 [class.text-danger]='hasError'>
-            Alice
-        </h2>
-        <h2 [ngClass]='messageClasses'>
-            Alice
+        <h2 [ngStyle]="titleStyles">
+            Style Bindind 3, the end of the trilogy
         </h2>
     `,
-    styles: [`
-        .text-success {
-            color: green;
-        }
-        .text-danger {
-            color: red;
-        }
-        .text-special {
-            font-style: italic;
-        }
-    `]
+    styles: []
 })
 
 export class TestComponent implements OnInit {
 
     public name = 'Alice';
-    public successClass = 'text-success';
     public hasError = true;
     public isSpecial = true;
-    public messageClasses = {
-        'text-success': !this.hasError,
-        'text-danger': this.hasError,
-        'text-special': this.isSpecial
-    }
+    public highlightColor = 'orange';
+    public titleStyles = {
+        color: 'blue',
+        fontStyle: 'italic'
+    };
 
     constructor() {
 
