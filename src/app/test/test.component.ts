@@ -6,15 +6,13 @@ import { Component, OnInit } from '@angular/core';
         <h2>
             Welcome {{ name }}
         </h2>
-        <h2 [style.color]="hasError ? 'red' : 'green'">
-            Style Binding
-        </h2>
-        <h2 [style.color]="highlightColor">
-            Style Binding 2, the much anticipated sequel
-        </h2>
-        <h2 [ngStyle]="titleStyles">
-            Style Bindind 3, the end of the trilogy
-        </h2>
+        <button (click)="onClick($event)">
+            Greet
+        </button>
+        <button (click)="greeting='Welcome to Ash Vacuum'">
+            Greet
+        </button>
+        {{ greeting }}
     `,
     styles: []
 })
@@ -22,13 +20,7 @@ import { Component, OnInit } from '@angular/core';
 export class TestComponent implements OnInit {
 
     public name = 'Alice';
-    public hasError = true;
-    public isSpecial = true;
-    public highlightColor = 'orange';
-    public titleStyles = {
-        color: 'blue',
-        fontStyle: 'italic'
-    };
+    public greeting = '';
 
     constructor() {
 
@@ -36,6 +28,11 @@ export class TestComponent implements OnInit {
 
     ngOnInit() {
 
+    }
+
+    onClick(event) {
+        console.log(event);
+        this.greeting = event.type;
     }
 
 }
