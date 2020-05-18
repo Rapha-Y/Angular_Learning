@@ -5,33 +5,18 @@ import { Component, OnInit } from '@angular/core';
     template: `
         <h2>
             Welcome {{ name }}
-        </h2>  
-        <h2>
-            {{ 2+2 }}
-        </h2>
-        <h2>
-            {{ 'Welcome ' + name }}
-        </h2>
-        <h2>
-            {{ name.length }}
-        </h2>
-        <h2>
-            {{ name.toUpperCase() }}
-        </h2>
-        <h2>
-            {{ greetUser() }}
-        </h2>
-        <h2>
-            {{ siteUrl }}
-        </h2>
+        </h2> 
+        <input [id]='myId' type='text' value='Placeholder...'>
+        <input bind-disabled='isDisabled' id='{{ myId }}' type='text' value='Placeholder...'>
     `,
     styles: []
 })
 
 export class TestComponent implements OnInit {
     
-    public name = 'Jeanne';
-    public siteUrl = window.location.href;
+    public name = 'Alice';
+    public myId = 'testId';
+    public isDisabled = false;
 
     constructor() {
 
@@ -39,10 +24,6 @@ export class TestComponent implements OnInit {
 
     ngOnInit() {
 
-    }
-
-    greetUser() {
-        return 'Hi ' + this.name;
     }
 
 }
