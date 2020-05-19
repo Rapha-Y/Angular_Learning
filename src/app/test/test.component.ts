@@ -1,29 +1,42 @@
-import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-test',
   template: `
     <h2>
-      {{ "Hello " + name }}
+      {{ name }}
     </h2>
-    <button (click)="fireEvent()">
-      Send event
-    </button>
+    <h2>
+      {{ name | lowercase }}
+    </h2>
+    <h2>
+      {{ name | uppercase }}
+    </h2>
+    <h2>
+      {{ message | titlecase }}
+    </h2>
+    <h2>
+      {{ name | slice:0:2 }}
+    </h2>
+    <h2>
+      {{ person | json }}
+    </h2>
   `,
   styles: []
 })
+
 export class TestComponent implements OnInit {
 
-  @Input('parentData') public name;
-  @Output() public childEvent = new EventEmitter();
+  public name = "Alice";
+  public message = "Welcome to Wiosna";
+  public person = {
+    "firstName": "Gyro",
+    "lastName": "Zeppeli"
+  }
 
   constructor() { }
 
   ngOnInit(): void {
-  }
-
-  fireEvent() {
-    this.childEvent.emit('Hi Ann');
   }
 
 }
