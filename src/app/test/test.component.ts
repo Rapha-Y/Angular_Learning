@@ -42,6 +42,19 @@ import { Component, OnInit } from '@angular/core';
     <h2>
       {{ 0.25 | currency:'BRL':'code' }}
     </h2>
+
+    <h2>
+      {{ date }}
+    </h2>
+    <h2>
+      {{ date | date:'short' }}
+    </h2>
+    <h2>
+      {{ date | date:'shortDate' }}
+    </h2>
+    <h2>
+      {{ date | date:'shortTime' }}
+    </h2>
   `,
   styles: []
 })
@@ -54,6 +67,7 @@ export class TestComponent implements OnInit {
     "firstName": "Gyro",
     "lastName": "Zeppeli"
   }
+  public date = new Date();
 
   constructor() { }
 
