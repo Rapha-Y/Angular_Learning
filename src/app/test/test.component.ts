@@ -3,12 +3,15 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-test',
   template: `
-    <h2 *ngIf="displayName; else elseBlock">
-      Alice
-    </h2>
+    <div *ngIf="displayName; then thenBlock; else elseBlock"></div>
+    <ng-template #thenBlock>
+      <h2>
+        Alice
+      </h2>
+    </ng-template>
     <ng-template #elseBlock>
       <h2>
-        Name is hidden
+        Hidden
       </h2>
     </ng-template>
   `,
@@ -16,7 +19,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TestComponent implements OnInit {
 
-  displayName = false;
+  displayName = true;
   constructor() { }
 
   ngOnInit(): void {
