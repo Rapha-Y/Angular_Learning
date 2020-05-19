@@ -21,6 +21,27 @@ import { Component, OnInit } from '@angular/core';
     <h2>
       {{ person | json }}
     </h2>
+
+    <h2>
+      {{ 3.142 | number:'1.2-3' }}
+    </h2>
+    <h2>
+      {{ 3.142 | number:'3.4-5' }}
+    </h2>
+    <h2>
+      {{ 3.142 | number:'3.1-2' }}
+    </h2>
+
+    <h2>
+      {{ 0.25 | percent }}
+    </h2>
+
+    <h2>
+      {{ 0.25 | currency }}
+    </h2>
+    <h2>
+      {{ 0.25 | currency:'BRL':'code' }}
+    </h2>
   `,
   styles: []
 })
