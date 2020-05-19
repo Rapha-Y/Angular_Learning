@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-test',
@@ -6,16 +6,24 @@ import { Component, OnInit, Input } from '@angular/core';
     <h2>
       {{ "Hello " + name }}
     </h2>
+    <button (click)="fireEvent()">
+      Send event
+    </button>
   `,
   styles: []
 })
 export class TestComponent implements OnInit {
 
   @Input('parentData') public name;
+  @Output() public childEvent = new EventEmitter();
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  fireEvent() {
+    this.childEvent.emit('Hi Ann');
   }
 
 }
