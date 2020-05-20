@@ -29,7 +29,7 @@ export class DepartmentListComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onSelect(department: {id: number, name :string}) {
+  onSelect(department: {id: number, name: string}) {
     this.router.navigate(['/departments', department.id]);
   }
 
