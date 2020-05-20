@@ -1,6 +1,11 @@
 <div style="text-align: center">
   <h1>
-    Helloooo and welcome to {{ title }}!!
+    Routing and Navigation
   </h1>
-  <div app-test></div>
 </div>
+<nav>
+  <a routerLink="/departments" routerLinkActive="active">Departments</a>
+  <a routerLink="/employees" routerLinkActive="active">Employees</a>
+</nav>
+
+<router-outlet></router-outlet>
