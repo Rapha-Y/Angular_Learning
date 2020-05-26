@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { Course } from './course';
 import { CourseService } from './course.service';
-import { stringify } from 'querystring';
 
 @Component({
     templateUrl: './courses-list.component.html',
