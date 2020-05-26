@@ -25,7 +25,6 @@ export class CourseListComponent {
         this.filteredCourses = this._courses.filter((course: Course) => 
             course.name.toLocaleLowerCase().indexOf(this._filterBy.toLocaleLowerCase()) > -1
         );
-        console.log(this.filteredCourses);
     }
 
     get filter() {
