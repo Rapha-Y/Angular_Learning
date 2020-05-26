@@ -4,7 +4,6 @@ import { CourseService } from './course.service';
 import { stringify } from 'querystring';
 
 @Component({
-    selector: 'app-course-list',
     templateUrl: './courses-list.component.html',
 })
 export class CourseListComponent {
