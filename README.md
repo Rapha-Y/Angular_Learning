@@ -7,3 +7,5 @@ structural-directives branch follows videos 12 to 14
 services branch follows videos 15 to 22  
 routing-demo follows videos 23 to 29  
 videos 30 to 33 were not appliable
+
+dio branch follows an Angular course from Digital Innovation One
